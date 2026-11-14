@@ -6,7 +6,7 @@ const services = [
     icon: 'laboratory',
     title: 'Construction & highway material testing',
     description: 'Laboratory testing that supports quality decisions across civil construction and road works.',
-    details: ['Gradation & Sieve Analysis', 'MDD / OMC and Moisture Content', 'CBR and Field Density', 'Compression Strength & Binder Quality'],
+    details: ['Gradation & Sieve Analysis', 'MDD / OMC and Moisture Content', 'CBR and Field Density', 'Compressive Strength & Binder Quality'],
   },
   {
     icon: 'survey',
@@ -68,9 +68,9 @@ const clients = [
 ]
 
 const team = [
-  { name: 'K P Preetham', role: 'Managing Director', qualification: 'B.E. Civil', image: 'images/preetham.jpg' },
-  { name: 'K B Gowtham', role: 'Head — QA/QC', qualification: 'B.E. Civil', image: 'images/gowtham.jpg' },
-  { name: 'Jayanth', role: 'Lab Manager', qualification: 'B.E. Civil', image: 'images/jayanth.jpg' },
+  { name: 'K P Preetham', role: 'Managing Director' },
+  { name: 'K B Gowtham', role: 'Head — QA/QC' },
+  { name: 'Jayanth', role: 'Lab Manager' },
 ]
 
 const mapUrl = 'https://maps.google.com/maps?q=Shop%204%2C%20PadmaShree%20Complex%2C%20Kote%20Road%2C%20near%20New%20Bus%20Stand%2C%20Gulsinda%2C%20Channarayapatna%2C%20Hassan%20573116&output=embed'
@@ -199,7 +199,6 @@ function App() {
             <SectionLabel>ABOUT KBN</SectionLabel>
             <h2>Built on quality.<br /><em>Measured with care.</em></h2>
             <p className="lead-copy">KBN InfraQuality Testing Services is a civil engineering material testing and surveying service provider supporting construction projects with a focus on quality and accuracy.</p>
-            <p>The company profile highlights an experienced team of industry professionals working across material testing, consultancy, and project requirements. Our guiding principle is simple: <strong>Precision in Every Measure.</strong></p>
             <div className="principles"><span>QUALITY</span><span>ACCURACY</span><span>SAFETY</span></div>
           </div>
         </section>
@@ -233,7 +232,7 @@ function App() {
             {sectors.map((sector) => (
               <article className="industry-row" key={sector.title}>
                 <Icon name={sector.icon} />
-                <div><h3>{sector.title}</h3><p>{sector.detail}</p></div><Arrow />
+                <div><h3>{sector.title}</h3><p>{sector.detail}</p></div>
               </article>
             ))}
           </div>
@@ -272,8 +271,8 @@ function App() {
           <div className="team-grid">
             {team.map((member) => (
               <article className="team-card" key={member.name}>
-                <div className="team-photo"><img src={publicAsset(member.image)} alt={member.name} loading="lazy" /></div>
-                <p className="team-role">{member.role}</p><h3>{member.name}</h3><p className="team-qualification">{member.qualification}</p>
+                <p className="team-role">{member.role}</p>
+                <h3>{member.name}</h3>
               </article>
             ))}
           </div>
@@ -283,9 +282,9 @@ function App() {
           <div className="section-wrap certification-layout">
             <div><SectionLabel>CERTIFICATIONS</SectionLabel><h2>Quality & safety,<br /><em>formally recognized.</em></h2></div>
             <div className="certificate-list">
-              <article className="certificate-row"><span className="certificate-emblem">ISO<small>QMS</small></span><div><h3>ISO 9001:2015</h3><p>Quality Management System · Assessed by QRO</p></div><Arrow /></article>
-              <article className="certificate-row"><span className="certificate-emblem">ISO<small>OH&S</small></span><div><h3>ISO 45001:2018</h3><p>Occupational Health & Safety Management System</p></div><Arrow /></article>
-              <article className="certificate-row"><span className="certificate-emblem">NABL</span><div><h3>ISO/IEC 17025:2017</h3><p>NABL accreditation</p></div><Arrow /></article>
+              <article className="certificate-row"><span className="certificate-emblem">ISO<small>QMS</small></span><div><h3>ISO 9001:2015</h3><p>Quality Management System · Assessed by QRO</p></div></article>
+              <article className="certificate-row"><span className="certificate-emblem">ISO<small>OH&S</small></span><div><h3>ISO 45001:2018</h3><p>Occupational Health & Safety Management System</p></div></article>
+              <article className="certificate-row"><span className="certificate-emblem">NABL</span><div><h3>ISO/IEC 17025:2017</h3><p>NABL accreditation</p></div></article>
             </div>
           </div>
         </section>
