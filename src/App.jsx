@@ -77,6 +77,32 @@ const mapUrl = 'https://maps.google.com/maps?q=Shop%204%2C%20PadmaShree%20Comple
 const mapLink = 'https://maps.google.com/?q=Shop+4,+PadmaShree+Complex,+Kote+Road,+Channarayapatna,+Hassan+573116'
 const publicAsset = (path) => `${import.meta.env.BASE_URL}${path}`
 
+const siteUrl = 'https://www.kbninfraquality.com/';
+
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  name: 'KBN InfraQuality Testing Services',
+  image: `${siteUrl}kbninfra-logo.jpeg`,
+  url: siteUrl,
+  telephone: '+91-88927-74691',
+  email: 'kbninfraquality@gmail.com',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: 'Shop No. 4, PadmaShree Complex, Kote Road, near New Bus Stand, Gulsinda',
+    addressLocality: 'Channarayapatna',
+    addressRegion: 'Karnataka',
+    postalCode: '573116',
+    addressCountry: 'IN',
+  },
+  areaServed: ['Channarayapatna', 'Hassan District', 'Karnataka'],
+  description:
+    'KBN InfraQuality Testing Services provides civil engineering material testing, highway material testing, surveying, project consultancy, third-party inspection, NDT, and structural assessment services in Karnataka.',
+  priceRange: '$$',
+  founder: 'K P Preetham',
+  sameAs: ['https://maps.google.com/?q=Shop+4,+PadmaShree+Complex,+Kote+Road,+Channarayapatna,+Hassan+573116'],
+}
+
 function Arrow({ diagonal = false }) {
   return <span aria-hidden="true" className={diagonal ? 'arrow arrow-diagonal' : 'arrow'}>↗</span>
 }
@@ -162,6 +188,7 @@ function ContactForm() {
 function App() {
   return (
     <div className="site-shell">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
       <Header />
       <main>
         <section className="hero" id="home">
