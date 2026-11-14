@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=DM+Sans:wght@400;500;600;700;800&display=swap');
+
+:root {
+  font-family: 'DM Sans', 'Segoe UI', sans-serif;
+  color: #172f38;
+  background: #f7f8f4;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  --ink: #172f38;
+  --teal-dark: #285d62;
+  --teal: #a7d2ca;
+  --coral: #f28a70;
+  --paper: #f7f8f4;
+  --white: #fffefa;
+  --muted: #627078;
+  --line: rgba(23, 47, 56, .12);
+  --line-strong: rgba(23, 47, 56, .23);
+  --display: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+  --body: 'DM Sans', 'Segoe UI', sans-serif;
+  --mono: 'SFMono-Regular', Consolas, monospace;
+}
+
+* { box-sizing: border-box; }
+
+html {
+  min-width: 320px;
+  scroll-behavior: smooth;
+  scroll-padding-top: 96px;
+}
+
+body {
+  min-width: 320px;
+  margin: 0;
+  font-size: 14px;
+}
+
+button, input, textarea { font: inherit; }
+
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
+  outline: 2px solid var(--coral);
+  outline-offset: 3px;
+}
+
+::selection { color: #fff; background: var(--teal-dark); }
