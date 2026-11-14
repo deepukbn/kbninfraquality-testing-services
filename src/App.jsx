@@ -68,13 +68,14 @@ const clients = [
 ]
 
 const team = [
-  { name: 'K P Preetham', role: 'Managing Director', qualification: 'B.E. Civil', image: '/images/preetham.jpg' },
-  { name: 'K B Gowtham', role: 'Head — QA/QC', qualification: 'B.E. Civil', image: '/images/gowtham.jpg' },
-  { name: 'Jayanth', role: 'Lab Manager', qualification: 'B.E. Civil', image: '/images/jayanth.jpg' },
+  { name: 'K P Preetham', role: 'Managing Director', qualification: 'B.E. Civil', image: 'images/preetham.jpg' },
+  { name: 'K B Gowtham', role: 'Head — QA/QC', qualification: 'B.E. Civil', image: 'images/gowtham.jpg' },
+  { name: 'Jayanth', role: 'Lab Manager', qualification: 'B.E. Civil', image: 'images/jayanth.jpg' },
 ]
 
 const mapUrl = 'https://maps.google.com/maps?q=Shop%204%2C%20PadmaShree%20Complex%2C%20Kote%20Road%2C%20near%20New%20Bus%20Stand%2C%20Gulsinda%2C%20Channarayapatna%2C%20Hassan%20573116&output=embed'
 const mapLink = 'https://maps.google.com/?q=Shop+4,+PadmaShree+Complex,+Kote+Road,+Channarayapatna,+Hassan+573116'
+const publicAsset = (path) => `${import.meta.env.BASE_URL}${path}`
 
 function Arrow({ diagonal = false }) {
   return <span aria-hidden="true" className={diagonal ? 'arrow arrow-diagonal' : 'arrow'}>↗</span>
@@ -83,7 +84,7 @@ function Arrow({ diagonal = false }) {
 function Brand({ footer = false }) {
   return (
     <a className={footer ? 'brand brand-footer' : 'brand'} href="#home" aria-label="KBN InfraQuality Testing Services, home">
-      <img src="/kbninfra-logo.jpeg" alt="" />
+      <img src={publicAsset('kbninfra-logo.jpeg')} alt="" />
       <span className="brand-name">KBN <small>INFRAQUALITY TESTING SERVICES</small></span>
     </a>
   )
@@ -177,7 +178,7 @@ function App() {
             <div className="hero-proof"><span className="proof-line" /><p>Quality & safety management<br /><strong>ISO 9001:2015 · ISO 45001:2018</strong></p></div>
           </div>
           <figure className="hero-image">
-            <img src="/images/sieve-analysis.jpg" alt="Materials laboratory sieve stack used for gradation and sieve analysis" fetchPriority="high" />
+            <img src={publicAsset('images/sieve-analysis.jpg')} alt="Materials laboratory sieve stack used for gradation and sieve analysis" fetchPriority="high" />
           </figure>
           <a className="hero-scroll" href="#about"><span /> SCROLL TO EXPLORE</a>
         </section>
@@ -191,7 +192,7 @@ function App() {
 
         <section className="about-section section-wrap" id="about">
           <div className="about-visual">
-            <img className="about-logo" src="/kbninfra-logo.jpeg" alt="Official KBN InfraQuality Testing Services logo" loading="lazy" />
+            <img className="about-logo" src={publicAsset('kbninfra-logo.jpeg')} alt="Official KBN InfraQuality Testing Services logo" loading="lazy" />
             <div className="experience-note"><span>AN EXPERIENCED<br />CIVIL ENGINEERING TEAM</span></div>
           </div>
           <div className="about-copy">
@@ -246,11 +247,11 @@ function App() {
             </div>
             <div className="work-grid">
               <figure className="work-item work-wide">
-                <div className="work-image"><img src="/images/sieve-analysis.jpg" alt="Laboratory equipment used for gradation and sieve analysis" loading="lazy" /></div>
+                <div className="work-image"><img src={publicAsset('images/sieve-analysis.jpg')} alt="Laboratory equipment used for gradation and sieve analysis" loading="lazy" /></div>
                 <figcaption><span><small>Laboratory Testing</small><strong>Gradation & Sieve Analysis</strong></span></figcaption>
               </figure>
               <figure className="work-item work-tall">
-                <div className="work-image"><img src="/images/field-testing.jpg" alt="Field testing equipment at an infrastructure site" loading="lazy" /></div>
+                <div className="work-image"><img src={publicAsset('images/field-testing.jpg')} alt="Field testing equipment at an infrastructure site" loading="lazy" /></div>
                 <figcaption><span><small>On-Site Testing</small><strong>Field Testing & Infrastructure</strong></span></figcaption>
               </figure>
             </div>
@@ -271,7 +272,7 @@ function App() {
           <div className="team-grid">
             {team.map((member) => (
               <article className="team-card" key={member.name}>
-                <div className="team-photo"><img src={member.image} alt={member.name} loading="lazy" /></div>
+                <div className="team-photo"><img src={publicAsset(member.image)} alt={member.name} loading="lazy" /></div>
                 <p className="team-role">{member.role}</p><h3>{member.name}</h3><p className="team-qualification">{member.qualification}</p>
               </article>
             ))}
